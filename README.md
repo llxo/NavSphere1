@@ -75,7 +75,7 @@ NavSphere 是一个基于 Next.js 14 构建的现代化导航管理平台，专�
 
 1. **克隆项目**
 ```bash
-git clone https://github.com/tianyaxiang/NavSphere.git
+git clone https://github.com/tianyaxian/NavSphere.git
 cd NavSphere
 ```
 
@@ -226,11 +226,15 @@ NEXT_PUBLIC_API_URL=http://localhost:3000
    ```
 
 3. **环境变量配置**
+
+   **修改`wrangler.toml`**
+
+   此文件的环境变量会**覆盖**Pages的环境变量，如果你不想公开url，在此文件删除，然后在Pages的环境变量添加
    
-   在 Cloudflare Pages 环境变量中添加：
+   没在`wrangler.toml`设置的在 Cloudflare Pages 环境变量中添加
    ```env
    GITHUB_ID=your-github-client-id
-   GITHUB_SECRET=your-github-client-secret
+   GITHUB_SECRET=your-github-client-secret    #必要
    GITHUB_OWNER=your-github-username
    GITHUB_REPO=your-repo-name
    GITHUB_BRANCH=main
